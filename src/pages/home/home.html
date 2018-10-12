@@ -7,12 +7,65 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <ion-list>
+    <div color="light" *ngFor="let apt of apts">
+      <ion-item-divider color="light">
+        {{apt.date}}
+      </ion-item-divider>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-item-sliding *ngFor="let time of apt.apts" (click)="onShowApt()">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img class="rounded-image" src="../../assets/imgs/logo.png">
+          </ion-thumbnail>
+          <!--<ion-thumbnail item-start>-->
+          <!--<img src="../../assets/imgs/logo.png">-->
+          <!--</ion-thumbnail>-->
+          <h2>Time: {{time}}</h2>
+          <p>Person: Hayao Miyazaki</p>
+          <button ion-button clear item-end>View</button>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="warning">
+            <ion-icon name="ios-create-outline"></ion-icon>
+            Edit
+          </button>
+          <button ion-button color="danger">
+            <ion-icon name="md-remove-circle"></ion-icon>
+            Remove
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+
+    </div>
+    <!--<ion-item-sliding>-->
+    <!--<ion-item>-->
+    <!--<ion-thumbnail item-start>-->
+    <!--<img src="../../assets/imgs/logo.png">-->
+    <!--</ion-thumbnail>-->
+    <!--<h2>My Neighbor Totoro</h2>-->
+    <!--<p>Hayao Miyazaki • 1988</p>-->
+    <!--<button ion-button clear item-end (click)="onShowApt()">View</button>-->
+    <!--</ion-item>-->
+    <!--<ion-item-options side="right">-->
+    <!--<button ion-button color="warning">-->
+    <!--<ion-icon name="ios-create-outline"></ion-icon>-->
+    <!--Edit-->
+    <!--</button>-->
+    <!--<button ion-button color="danger">-->
+    <!--<ion-icon name="md-remove-circle"></ion-icon>-->
+    <!--Remove-->
+    <!--</button>-->
+    <!--</ion-item-options>-->
+    <!--</ion-item-sliding>-->
+  </ion-list>
+
+  <div id="addNewApt">
+    <button ion-button outline (click)="onAddApt()">Add New Apt</button>
+
+  </div>
 </ion-content>
+
