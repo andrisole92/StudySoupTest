@@ -12,7 +12,6 @@ import {HTTP} from "@ionic-native/http";
 export default class AppointmentProvider {
 
   constructor(private httpClient: HttpClient, private http: HTTP) {
-    window.aaa = this;
     this.httpClient.get('https://tutor.studysoup.com/api/schedule').subscribe((data) => console.log(data));
     // this.http.get('https://tutor.studysoup.com/api/schedule', {}, {})
     //   .then(data => {
@@ -67,7 +66,7 @@ export default class AppointmentProvider {
       });
   }
 
-  getData(){
+  getData() {
     return {"available": [{"2018-10-12": [9, 13, 20]}, {"2018-10-13": [11, 15, 20]}, {"2018-10-14": [8, 14, 18]}]};
   }
 

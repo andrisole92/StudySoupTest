@@ -5,11 +5,8 @@ import {describe} from "selenium-webdriver/testing";
 describe('Banker Module', () => {
   const myPin = 1234;
   const myAccount  = 'ruzencev';
-  let cash = 400;
-  let withdraw = 200;
 
   beforeAll(() => {
-
     Banker.newAccount(myAccount, myPin);
   });
 

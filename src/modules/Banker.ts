@@ -11,7 +11,7 @@ export default class Banker{
 
   static newAccount(id:string, pin: number){
     if (this.accounts[id]) throw new Error('Account with this id already exists.')
-    this.accounts[id] = new Account(pin, id);
+    this.accounts[id] = new Account(pin);
   }
 
   static authorizeSelf(id:string,pin:number){

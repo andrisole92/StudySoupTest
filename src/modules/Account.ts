@@ -1,15 +1,13 @@
 import Transaction from "./Transaction";
 
 export default class Account {
-  private id: string = null;
   private pin: number = null;
   private balance: number = 0;
   private withdrawLimit: number = 300;
   private withdrawHistory: Transaction[] = [];
 
 
-  constructor(pin: number, id: string) {
-    this.id = id;
+  constructor(pin: number) {
     this.pin = pin;
     this.balance = 0;
   }
