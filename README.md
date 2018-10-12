@@ -1,5 +1,5 @@
 # StudySoupTest
 
 Files and folders to check
-- e2e/tsconfig.e2e.json
+- e2e/Banker.e2e-spec.ts
 - src/modules
